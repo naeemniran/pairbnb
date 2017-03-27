@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  #check rails route to see its RESTful routes
+  get 'listings/index'
+
+  get 'name/listings'
+
+  #check rails routes to see its RESTful routes
 
   root 'welcome#index'
 
@@ -9,6 +13,10 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :edit, :update] do
     resource :password,
       only: [:create, :edit, :update]
+  end
+
+  resources :users do
+    resources :listings
   end
 
   get "/sign_in" => "sessions#new", as: "sign_in"

@@ -2,12 +2,31 @@
 class UsersController < Clearance::UsersController
 	
   	def index
+  		@users = User.all
+  	end
+
+  	def show
+  		@user = User.find(user_params)
+  	end
+
+  	def new
+  		@user = User.new
   	end
 
 	def edit
+		@user = User.find(user_params)
 	end
 
 	def update
+
+	end
+
+	def create
+
+	end
+
+	def delete
+
 	end
 
 	private
