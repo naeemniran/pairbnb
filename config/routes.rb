@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource :session, controller: "clearance/sessions", only: [:create]
 
   resources :users, controller: "users" do
+    resources :listings
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]

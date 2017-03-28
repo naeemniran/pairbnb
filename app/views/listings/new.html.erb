@@ -1,1 +1,7 @@
-<h1>NewListings#index</h1>
+<h1>NewListings#new</h1>
+
+<!-- format for nested routes [argument1, arguemtn2] diff if normal route, can just put @listing (1 arguent) refer users new.html-->
+<%= form_for [@user, @listing] do |form| %>
+	<%= render partial: "form", locals: {form: form} %>
+<%= form.submit "Submit" %>
+<% end %>
