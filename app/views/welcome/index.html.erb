@@ -15,3 +15,12 @@
 	<h3>Haven't signed up?</h3>
 	<%= link_to "Create A New User", sign_up_path %>
 <% end %>
+
+<%= will_paginate @listings %>
+<% @listings.each do |listing| %>
+	<h4><%= listing.title %></h4>
+	<p><%= listing.description%></p>
+	<p><%= listing.price %></p>
+	<p><%= listing.max_guests %></p>
+	<br>
+<% end %>
