@@ -1,1 +1,7 @@
-<h1> Edit page </h1>
+<h1> Edit <%= @user.name %> page </h1>
+<%= form_for @user do |form| %>
+	<%= render partial: "form", locals: {form: form} %>
+<%= form.submit "Submit" %>
+<% end %>
+
+<%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %>

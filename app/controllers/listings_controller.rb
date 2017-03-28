@@ -5,7 +5,8 @@ class ListingsController < ApplicationController
   end
 
   def new
-  	@listing = Listing.new
+    byebug
+  	@listing = current_user.listing.new
   end
 
   def create
@@ -19,6 +20,7 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update

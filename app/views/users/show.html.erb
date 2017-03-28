@@ -1,0 +1,9 @@
+<div>
+	<p><%= @user.name %></p>
+	<p><%= @user.email %></p>
+</div>
+
+<div>
+<!-- path with :id(wild card) requires arguments eg: below -->
+<%= link_to "Edit", edit_user_path(@user) %>
+</div>
