@@ -1,6 +1,19 @@
-<p>My Listing</p>
+<h3>My Listing</h3>
+
 
 <p><%= @listing.title %></p>
 <p><%= @listing.description %></p>
+<p>RM <%= @listing.price %> per night</p>
+<% @listing.photos.each do |photo| %>
+	<%= image_tag photo %>
+<% end %>
 
-<%= link_to "Edit", edit_user_listing_path(@listing) %>
+<br>
+<%= link_to "Edit", edit_user_listing_path(@user, @listing) %>
+<br>
+
+<%= link_to "New Listing", new_user_listing_path(current_user) %>
+
+<br>
+
+<%= link_to "My Listings", user_listings_path(current_user) %>

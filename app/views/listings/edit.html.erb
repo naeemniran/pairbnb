@@ -5,5 +5,7 @@
 <%= form.submit "Submit" %>
 <% end %>
 
-<%= button_to "Delete", user_listing_path(@user, @listing), method: :delete, data: {confirm: "Are you sure?"} %>
-<!-- method: delete is to override the 'GET' method from user_listing_path -->
+<%= button_to "Delete", user_listings_path(@user, @listing), method: :delete, data: {confirm: "Are you sure?"} %>
+<!-- method: delete, is to override the 'GET' method from user_listing_path -->
+
+<%= link_to "Back", user_listing_path(@user, @listing) %>

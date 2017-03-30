@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
   
   def index
   	@listings = Listing.all
+
   end
 
   def new
@@ -44,7 +45,7 @@ class ListingsController < ApplicationController
 private 
 
   def listing_params
-  	params.require(:listing).permit(:description, :title, :price)
+  	params.require(:listing).permit(:description, :title, :price, photos: [])
   end
 
   def find_user 

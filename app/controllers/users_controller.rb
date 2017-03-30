@@ -2,7 +2,12 @@
 class UsersController < Clearance::UsersController
 	
   	def index
-  		@users = User.all
+  		if current_user.superadmin?
+  			@users = User.all
+  		else
+  			flash[:error] = "YOU SHALL NOT PASS!"
+  			redirect_to root_path
+  		end
   	end
 
   	def show

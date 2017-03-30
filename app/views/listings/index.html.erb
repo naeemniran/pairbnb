@@ -2,4 +2,15 @@
 <p>Find me in app/views/listings/index.html.erb</p>
 
 
-<%= link_to "New Listing", new_user_listing_path(current_user) %>
+
+<% @listings.each do |listing| %>
+	<h3><%= listing.title %></h3>
+	<p><%= listing.description %></p>
+	<p>RM <%= listing.price %> per night</p>
+	<% listing.photos.each do |photo| %>
+		<%= image_tag photo %>
+
+	<% end %>
+	<%= link_to "Edit", edit_user_listing_path(@user, listing) %>
+<% end %>
+
